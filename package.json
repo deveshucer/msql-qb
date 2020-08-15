@@ -1,0 +1,31 @@
+{
+  "name": "msql-qb",
+  "version": "1.0.0",
+  "description": "A very light-weight and simple mysql query builder lib, to write most commonly used mysql queries.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deveshucer/msql-qb.git"
+  },
+  "keywords": [
+    "mysql",
+    "mysql-query-builder",
+    "query-builder",
+    "mysql-qb",
+    "simple-query-builder",
+    "node-mysql-qb",
+    "query"
+  ],
+  "author": "Devesh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deveshucer/msql-qb/issues"
+  },
+  "homepage": "https://github.com/deveshucer/msql-qb#readme"
+}
