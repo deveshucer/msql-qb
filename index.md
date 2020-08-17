@@ -115,8 +115,8 @@ query = qb.where("column", '?').andWhere({column2: '?'}).update("tableName", {co
 ```
 
 #### DELETE
-
 > use all `where` conditions before `delete` cause.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 
@@ -197,6 +197,7 @@ let query = qb
     .orWhere({col1: '?', col2: '?'})
     .build();
 ```
+
 ### Special Use case
 + If you want to convert your column keys into `camelCase` format from the `snake_case` or from different lower and upper case formats.
 + You can enable this by setting `'convertColumnsToCamelCase'` option in the builder class.
