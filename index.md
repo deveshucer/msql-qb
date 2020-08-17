@@ -79,6 +79,7 @@ let query = qb
 #### INSERT
 
 > Please note that `.build()` method is not available for below queries, and you do not require it for non-select queries.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 
@@ -97,6 +98,7 @@ query = qb.insert("tableName", {col1: '?', col2: '?', col3: '?'});
 #### UPDATE
 
 > use all `where` conditions before `update` cause method chaining is not available after `update`.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 
@@ -111,7 +113,9 @@ const query = qb.where("column", "val").andWhere({column2: "val2"}).update("tabl
 // or with preapared statement
 query = qb.where("column", '?').andWhere({column2: '?'}).update("tableName", {col1: '?', col2: '?'});
 ```
+
 #### DELETE
+
 > use all `where` conditions before `delete` cause.
 ```javascript
 const QueryBuilder = require('msql-qb');
@@ -123,10 +127,11 @@ const query = qb.where("column", "val").andWhere({column2: "val2"}).delete("tabl
 query = qb.andWhere({column: '?', column2: '?'}).delete("tableName");
 
 ```
-### WHERE clause
 
+### WHERE clause
 > * Different where clause usages
 > * all where clause are chainable meaning you can call appropriate method after where.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 const qb = new QueryBuilder();
@@ -159,6 +164,7 @@ qb.whereBetween("col", ["valA", "valB",]);
 
 ### Prepared Statement Queries
 Set the `'preparedStatement'` option either in class constructor or later also you can set using `.setOptions({})` method.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 // parameterized or query for prepared statements
@@ -174,6 +180,7 @@ qb.setOptions({
 ```
 
 > **Caution!** pass the column value `"?"` as placeholder, as given in the example.
+
 ```javascript
 const QueryBuilder = require('msql-qb');
 // pass the column values as '?' placeholder for value as given in below example
@@ -189,7 +196,6 @@ let query = qb
     .where("column", "val")
     .orWhere({col1: '?', col2: '?'})
     .build();
-
 ```
 ### Special Use case
 + If you want to convert your column keys into `camelCase` format from the `snake_case` or from different lower and upper case formats.
@@ -225,6 +231,7 @@ console.log(query);
 // WHERE key = "val" OR col1 = "val1" OR col2 = "val2";
 
 ``` 
+
 [![Twitter](https://img.shields.io/twitter/follow/Devesh299.svg?style=social&label=@Devesh299)](https://twitter.com/Devesh299)
 
 # Notes
