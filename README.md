@@ -8,7 +8,7 @@ A very light-weight and simple mysql query builder lib, to write most commonly u
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 # Motivation
-- I was trying to solve the issues with our current implementation of the models that were written in direct plain text query.
+- I was trying to solve the issues with our current implementation of the models that were written in direct plain text query.`
 - It was creating so much of code duplicity and very error-prone each time if we made any changes.
 - Another issue was our Database has different styled column names in different tables. So to overcome from these problems, I build this package.
 
