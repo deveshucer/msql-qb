@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/deveshucer/msql-qb.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "mysql",
     "mysql-query-builder",
