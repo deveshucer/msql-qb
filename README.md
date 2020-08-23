@@ -66,7 +66,7 @@ let query = qb
 const qb = new QueryBuilder();
 // to select the specific columns
 let query = qb
-    .select(["col1, col2, col3, col4"]) 
+    .select(["col1", "col2", "col3", "col4"]) 
     .from("tableName")
     .where("column", "val")
     .orderBy("col1", "DESC") // default is ASC
@@ -88,9 +88,9 @@ const data = {
   col2: "val2",
   col3: "val3"
 }
-const query = qb.insert("tableName", data);
+let query = qb.insert("tableName", data);
 
-// or with preapared statement
+// or with prepared statement
 query = qb.insert("tableName", {col1: '?', col2: '?', col3: '?'});
 ```
 
@@ -106,9 +106,9 @@ const data = {
   col2: "val2",
   col3: "val3"
 }
-const query = qb.where("column", "val").andWhere({column2: "val2"}).update("tableName", data);
+let query = qb.where("column", "val").andWhere({column2: "val2"}).update("tableName", data);
 
-// or with preapared statement
+// or with prepared statement
 query = qb.where("column", '?').andWhere({column2: '?'}).update("tableName", {col1: '?', col2: '?'});
 ```
 #### DELETE
@@ -117,7 +117,7 @@ query = qb.where("column", '?').andWhere({column2: '?'}).update("tableName", {co
 const QueryBuilder = require('msql-qb');
 
 const qb = new QueryBuilder();
-const query = qb.where("column", "val").andWhere({column2: "val2"}).delete("tableName");
+let query = qb.where("column", "val").andWhere({column2: "val2"}).delete("tableName");
 
 // or with prepared statement
 query = qb.andWhere({column: '?', column2: '?'}).delete("tableName");
@@ -126,21 +126,21 @@ query = qb.andWhere({column: '?', column2: '?'}).delete("tableName");
 ### WHERE clause
 
 > * Different where clause usages
-> * all where clause are chainable meaning you can call appropriate method after where.
+> * all where clause are chain-able meaning you can call appropriate method after where.
 ```javascript
 const QueryBuilder = require('msql-qb');
 const qb = new QueryBuilder();
 
-// best use of it if there is only one column condtion
-qb.where("col", "val", "!="); // condtion could be any valid condtion eg: >=, <=, !=, is
+// best use of it if there is only one column condition
+qb.where("col", "val", "!="); // condition could be any valid condition eg: >=, <=, !=, is
 
 // you can join multiple where together like this
-qb.where("col", "val", ">=").where("col2", "val2", "<="); // all condtion will be joined by AND operator
+qb.where("col", "val", ">=").where("col2", "val2", "<="); // all condition will be joined by AND operator
 
-// if there are multiple column condtion but with equality (=) then use this
+// if there are multiple column condition but with equality (=) then use this
 qb.andWhere({col1: "val1", col2: "val2", col3: "val3"});
 
-// to use multiple condtion with OR operator
+// to use multiple condition with OR operator
 qb.orWhere({col1: "val1", col2: "val2", col3: "val3"});
 
 // for where like
