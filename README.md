@@ -93,6 +93,22 @@ let query = qb.insert("tableName", data);
 // or with prepared statement
 query = qb.insert("tableName", {col1: '?', col2: '?', col3: '?'});
 ```
+#### ON DUPLICATE KEY UPDATE
+
+```javascript
+const QueryBuilder = require('msql-qb');
+
+const qb = new QueryBuilder();
+const data = {
+  col1: "val1",
+  col2: "val2",
+  col3: "val3"
+}
+let query = qb.insert("tableName", data, true, {
+    someColumn: "someVal"
+});
+// INSERT INTO tableName (col1,col2,col3) VALUES ('val1','val2','val3') ON DUPLICATE KEY UPDATE someColumn = "someVal"
+```
 
 #### UPDATE
 
